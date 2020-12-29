@@ -66,7 +66,7 @@ __strnlen_aarch64_sve:
 	b	1b
 
 	/* End of count.  Return max.  */
-9:	mov	x0, x2
+9:	mov	x0, x1
 	ret
 
 	.size	__strnlen_aarch64_sve, . - __strnlen_aarch64_sve
