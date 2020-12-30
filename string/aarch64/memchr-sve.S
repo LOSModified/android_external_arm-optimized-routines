@@ -21,8 +21,8 @@ __memchr_aarch64_sve:
 	dup	z1.b, w1			/* duplicate c to a vector */
 	setffr					/* initialize FFR */
 	mov	x3, 0				/* initialize off */
-	nop
 
+	.p2align 4
 0:	whilelo	p1.b, x3, x2			/* make sure off < max */
 	b.none	9f
 

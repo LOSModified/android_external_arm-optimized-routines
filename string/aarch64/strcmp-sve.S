@@ -21,9 +21,9 @@ __strcmp_aarch64_sve:
 	setffr				/* initialize FFR */
 	ptrue	p1.b, all		/* all ones; loop invariant */
 	mov	x2, 0			/* initialize offset */
-	nop
 
 	/* Read a vector's worth of bytes, stopping on first fault.  */
+	.p2align 4
 0:	ldff1b	z0.b, p1/z, [x0, x2]
 	ldff1b	z1.b, p1/z, [x1, x2]
 	rdffrs	p0.b, p1/z
